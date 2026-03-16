@@ -442,6 +442,8 @@ li {
   justify-content: center;
   margin-top: -75px !important;
     margin-bottom: 0;
+    position: relative;
+    z-index: 100;
 }
 
 .flower {
@@ -556,7 +558,7 @@ li {
 
   .flower {
     width: clamp(88px, 26vw, 128px);
-    bottom: 0px;
+    bottom: 0;
   }
 
   .countdown-grid {
