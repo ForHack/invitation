@@ -41,25 +41,40 @@ if (openInviteBtn && introOverlay && envelopeWrap && mainInvitation) {
 }
 
 const countdownEl = document.getElementById('countdown');
-const weddingDate = new Date('2026-02-21T19:30:00+05:30').getTime();
+const daysEl = countdownEl?.querySelector('[data-unit="days"]');
+const hoursEl = countdownEl?.querySelector('[data-unit="hours"]');
+const minutesEl = countdownEl?.querySelector('[data-unit="minutes"]');
+const secondsEl = countdownEl?.querySelector('[data-unit="seconds"]');
+const weddingDate = new Date('2026-04-18T18:00:00+05:00').getTime();
+
+function formatUnit(value) {
+  return String(value).padStart(2, '0');
+}
 
 function updateCountdown() {
-  if (!countdownEl) return;
+  if (!countdownEl || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
   const now = Date.now();
   const diff = weddingDate - now;
 
   if (diff <= 0) {
-    countdownEl.textContent = "Bugun to'y kuni. Xush kelibsiz!";
+    daysEl.textContent = '00';
+    hoursEl.textContent = '00';
+    minutesEl.textContent = '00';
+    secondsEl.textContent = '00';
     return;
   }
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
 
-  countdownEl.textContent = `Boshlanishiga: ${days} kun ${hours} soat ${minutes} daqiqa`;
+  daysEl.textContent = formatUnit(days);
+  hoursEl.textContent = formatUnit(hours);
+  minutesEl.textContent = formatUnit(minutes);
+  secondsEl.textContent = formatUnit(seconds);
 }
 
 updateCountdown();
-setInterval(updateCountdown, 60000);
+setInterval(updateCountdown, 1000);

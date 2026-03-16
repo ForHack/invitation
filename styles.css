@@ -375,6 +375,25 @@ li {
   margin: 0 auto;
 }
 
+.map-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, #e9f6e8 0%, #d8edd7 55%, #c4e1c1 100%);
+  color: #2f5b37;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.map-link:hover {
+  transform: translateY(-2px);
+  color: #1f4a2a;
+}
+
 .transport-art-section {
   margin-top: 10px;
 }
@@ -442,10 +461,39 @@ li {
   right: 0;
 }
 
-.countdown {
-  font-family: "Times New Roman", Georgia, serif;
-  letter-spacing: 0.06em;
-  font-size: 13px;
+.countdown-section h2 {
+  margin-bottom: 10px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.count-item {
+  padding: 12px 8px 10px;
+  border-radius: 14px;
+  border: 1px solid #d7c6a5;
+  background: rgba(255, 250, 240, 0.78);
+}
+
+.count-value {
+  display: block;
+  color: #4a3b28;
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  line-height: 1;
+}
+
+.count-label {
+  display: block;
+  margin-top: 4px;
+  color: #6c5c46;
+  font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -510,6 +558,10 @@ li {
     width: clamp(88px, 26vw, 128px);
     bottom: 0px;
   }
+
+  .countdown-grid {
+    gap: 8px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -541,12 +593,17 @@ li {
 
   .meta,
   .subtitle {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.45;
   }
 
   .scene-img {
     max-width: min(42vw, 190px);
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 320px;
   }
 
   .footer-text {
@@ -566,6 +623,7 @@ li {
   margin: 0 auto;
   position: relative;
     z-index: 100;
+  line-height: 1.45;
 }
 
 .flowers-container {
