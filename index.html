@@ -7,14 +7,33 @@
     <link rel="stylesheet" href="fonts/stylesheet.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main class="invitation">
+  <body class="intro-active">
+    <div class="intro-overlay" id="introOverlay">
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-pocket"></div>
+<!--          <div class="letter">-->
+<!--            <p class="letter-kicker">Taklifnoma</p>-->
+<!--            <h2>To'yimizga taklif etamiz</h2>-->
+<!--            <p>-->
+<!--              Qadamingiz bilan davramiz yanada fayzli bo'ladi.-->
+<!--            </p>-->
+<!--          </div>-->
+          <p class="envelope-title">To'yimizga taklif <br /> etamiz</p>
+          <button class="open-btn" id="openInviteBtn" type="button">Taklifnomani ochish</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="invitation is-hidden" id="mainInvitation">
       <section class="section hero reveal">
-          <h1>Abdulaziz va Umida</h1>
+          <h2>Assalomu Aleykum</h2>
         <img class="illustration arch-img" src="images/hero.png" alt="To'y juftligi illyustratsiyasi" />
-        <p class="overline">SIZNI MEHR BILAN TAKLIF ETAMIZ</p>
-        <p class="lead">Sevgi, quvonch va duolar ila</p>
-        <p class="meta">18-Aprel 2026, Shanba</p>
+        <p class="meta">SIZNI AZIZ FARZANDLARIMIZ</p>
+          <h2>Abdulaziz va Umida</h2>
+<!--        <p class="lead">Sevgi, quvonch va duolar ila</p>-->
+        <p>larning nikoh to'ylariga, lutfan taklif etamiz.</p>
       </section>
 
       <section id="program" class="section split reveal">
@@ -28,12 +47,12 @@
         </div>
       </section>
 
-      <section class="section split reverse reveal">
+      <section id="address" class="section split reverse reveal">
         <img class="illustration scene-img" src="images/table.png" alt="To'y dasturxoni illyustratsiyasi" />
         <div class="text">
           <h2>To'yxona manzil</h2>
            <div>
-               <a href="https://yandex.uz/maps/org/95205151460/?ll=69.254045%2C41.249397&z=15" target="_blank">Xaritada</a><br />
+               <a href="https://yandex.uz/maps/org/95205151460/?ll=69.254045%2C41.249397&z=15" target="_blank">Yandex xaritada</a><br />
            </div>
         </div>
       </section>
@@ -51,13 +70,17 @@
 
 
       <section class="section finale reveal">
-        <img class="flower flower-left" src="images/flower1.png" alt="" aria-hidden="true" />
-        <img class="flower flower-right" src="images/flower2.png" alt="" aria-hidden="true" />
-        <p class="lead">Sizni intizorlik bilan kutib qolamiz! <br /> Raximovlar oilasi</p>
-        <p class="footer-text">Har bir mehmonimiz biz uchun aziz. Tashrifingiz davramizga fayz, qalbimizga quvonch bag‘ishlaydi. Yaxshi kunlarda diydorlashguncha!</p>
+        <div class="">
+            <p class="lead">Sizni intizorlik bilan kutib qolamiz! <br /> Raximovlar oilasi</p>
+            <p class="footer-text">Har bir mehmonimiz biz uchun aziz. Tashrifingiz davramizga fayz, qalbimizga quvonch bag‘ishlaydi. Yaxshi kunlarda diydorlashguncha!</p>
+        </div>
       </section>
-    </main>
 
+      <div class="flowers-container">
+          <img class="flower flower-left" src="images/flower1.png" alt="" aria-hidden="true" />
+          <img class="flower flower-right" src="images/flower2.png" alt="" aria-hidden="true" />
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
